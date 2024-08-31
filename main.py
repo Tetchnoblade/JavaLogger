@@ -1,7 +1,7 @@
 import psutil
 from scapy.all import sniff, IP, TCP, conf
 
-TARGET_PROCESS = "java.exe"
+TARGET_PROCESS = input('プロセス名 (javaの場合、java.exe又はjavaw.exe): ')
 
 def find_java_pid(process_name):
     for proc in psutil.process_iter(['pid', 'name']):
